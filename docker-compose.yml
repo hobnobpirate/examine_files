@@ -1,0 +1,6 @@
+version: '2.1'
+
+services:
+  examine_files:
+    image: examine_files
+    build: .
