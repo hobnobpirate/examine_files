@@ -35,6 +35,8 @@ Docker
 
 If you'd like to try examine_files without building in your own environment, there is a Dockerfile for testing.::
 
+    git clone https://github.com/hobnobpirate/examine_files.git
+    cd examine_files
     docker build --rm -f "Dockerfile" -t examine_files:latest .
     docker run --rm -it examine_files examine_files Samples
 
