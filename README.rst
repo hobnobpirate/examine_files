@@ -29,6 +29,33 @@ Features
 * Prints report of matches, mismatches, and unknown status
 * Accepts custom whitelist or utilizes built-in default for demonstration only
 
+
+Docker
+------
+
+If you'd like to try examine_files without building in your own environment, there is a Dockerfile for testing.::
+
+    docker build --rm -f "Dockerfile" -t examine_files:latest .
+    docker run --rm -it examine_files examine_files Samples
+
+
+Whitelist
+---------
+
+A default whitelist is built into the script in case one is not defined on the command line.
+It provides a minimal number of entries in order to demonstrate usage.
+A sample whitelist is also included in the repository to allow the user to add their own entries.
+The following formatting must be followed to ensure compatibility with file-examine.::
+
+    [
+    {"t": "beginning of output from file command, cut off at first comma", "ext": ".extension"},
+    {"t": "gzip compressed data", "ext": ".gz"},
+    {"t": "PNG image data", "ext": ".png"},
+    {"t": "Python script", "ext": ".py"},
+    {"t": "ASCII text", "ext": [".txt", ".py"]},
+    {"t": "JSON data", "ext": ".json"}
+    ]
+
 Credits
 -------
 
