@@ -6,13 +6,7 @@ from pathlib import Path
 
 import magic
 from prettytable import PrettyTable
-
-WHITELIST = [
-    {"t": "gzip compressed data", "ext": ".gz"},
-    {"t": "PNG image data", "ext": ".png"},
-    {"t": "Python script", "ext": ".py"},
-    {"t": "ASCII text", "ext": [".txt", ".py"]},
-]
+import file_types
 
 
 def check_type(ifile: Path) -> tuple:
@@ -55,7 +49,7 @@ def cli(p: Path, args: argparse):
         with open(args.whitelist) as f:
             whitelist = json.load(f)
     else:
-        whitelist = WHITELIST
+        whitelist = file_types.WHITELIST
 
     for dirs in list(p.glob("**/**")):
         for ifile in dirs.iterdir():
@@ -90,9 +84,7 @@ def get_args():
     p.add_argument("-ng", "--no-good", action="count", help="Do not show matches")
     p.add_argument("-nb", "--no-bad", action="count", help="Do not show mismatches")
     p.add_argument("-nu", "--no-unknown", action="count", help="Do not show unknown")
-    p.add_argument(
-        "-w", "--whitelist", help="Path to custom whitelist"
-    )
+    p.add_argument("-w", "--whitelist", help="Path to custom whitelist")
     return p.parse_args()
 
 
@@ -103,6 +95,7 @@ def main():
         cli(p, args)
     else:
         print(f"Path {p} not found.")
+
 
 if __name__ == "__main__":
     main()

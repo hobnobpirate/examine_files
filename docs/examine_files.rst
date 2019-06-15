@@ -8,15 +8,23 @@ examine\_files.examine\_files module
 ------------------------------------
 
 .. automodule:: examine_files.examine_files
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+examine\_files.file\_types module
+---------------------------------
+
+.. automodule:: examine_files.file_types
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
 Module contents
 ---------------
 
 .. automodule:: examine_files
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :undoc-members:
+   :show-inheritance:
