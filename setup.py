@@ -38,7 +38,7 @@ setup(
     include_package_data=True,
     keywords="examine_files",
     name="examine_files",
-    packages=find_packages(include=["examine_files"]),
+    packages=find_packages(include=["examine_files", "file_types"]),
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,
