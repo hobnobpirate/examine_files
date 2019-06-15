@@ -6,7 +6,7 @@ from pathlib import Path
 
 import magic
 from prettytable import PrettyTable
-import file_types
+from . import file_types
 
 
 def check_type(ifile: Path) -> tuple:
