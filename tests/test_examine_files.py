@@ -6,7 +6,7 @@
 
 import unittest
 
-from examine_files import examine_files
+from examine_files import examine_files, file_types
 
 
 class TestExamine_files(unittest.TestCase):
